@@ -1,17 +1,23 @@
+import React from "react";
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
 import Pricing from "./components/Pricing";
-import SignUpForm from "./components/SignUpForm";
+import WaitingList from "./components/WaitingList";
 import Footer from "./components/Footer";
+import "./index.css";
 
-export default function App() {
+function App() {
   return (
-    <div className="font-sans bg-gradient-to-b from-blue-50 to-white">
+    <div className="app">
+      <Navbar />
       <Hero />
       <Features />
       <Pricing />
-      <SignUpForm />
+      <WaitingList />
       <Footer />
     </div>
   );
 }
+
+export default App;

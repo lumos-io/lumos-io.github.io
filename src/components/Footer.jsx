@@ -1,16 +1,18 @@
-export default function Footer() {
+import React from "react";
+
+function Footer() {
   return (
-    <footer className="py-10 bg-gray-900 text-white text-center">
-      <p>&copy; 2025 Kubernetes Autopilot SaaS</p>
-      <p>
-        <a href="https://github.com" className="hover:underline mx-2">
-          GitHub
-        </a>
-        |
-        <a href="https://twitter.com" className="hover:underline mx-2">
-          Twitter
-        </a>
-      </p>
+    <footer>
+      <div className="container">
+        <p>© {new Date().getFullYear()} KubeScale. All rights reserved.</p>
+        <div className="footer-links">
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
     </footer>
   );
 }
+
+export default Footer;

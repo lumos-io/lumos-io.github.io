@@ -1,32 +1,41 @@
-export default function Features() {
+import React from "react";
+import { Cpu, Server, LineChart } from "lucide-react";
+
+function Features() {
   const features = [
     {
-      title: "Autonomous Scaling",
-      desc: "Automatically right-size your clusters.",
+      icon: <Cpu size={40} />,
+      title: "Lightweight Agent",
+      desc: "Runs as a DaemonSet with minimal overhead.",
     },
     {
-      title: "Cost Optimization",
-      desc: "Save on cloud spend without manual work.",
+      icon: <Server size={40} />,
+      title: "Smart Scaling",
+      desc: "Automatically detects under/over-utilized nodes.",
     },
     {
-      title: "Zero Touch Operations",
-      desc: "Deploy once and let our SaaS handle the rest.",
+      icon: <LineChart size={40} />,
+      title: "Actionable Insights",
+      desc: "Clear dashboards to guide infra decisions.",
     },
   ];
+
   return (
-    <section className="py-20 px-10 text-center">
-      <h2 className="text-4xl font-bold mb-12">Features</h2>
-      <div className="grid md:grid-cols-3 gap-10">
-        {features.map((f) => (
-          <div
-            key={f.title}
-            className="p-6 rounded-lg shadow-lg hover:shadow-xl transition"
-          >
-            <h3 className="text-2xl font-semibold mb-4">{f.title}</h3>
-            <p>{f.desc}</p>
-          </div>
-        ))}
+    <section id="features" className="features">
+      <div className="container">
+        <h2>Why Choose KubeScale?</h2>
+        <div className="features-grid">
+          {features.map((f, idx) => (
+            <div key={idx} className="feature-card">
+              {f.icon}
+              <h3>{f.title}</h3>
+              <p>{f.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
+
+export default Features;

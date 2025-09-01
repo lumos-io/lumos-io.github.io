@@ -1,16 +1,17 @@
-export default function Hero() {
+import React from "react";
+
+function Hero() {
   return (
-    <section className="text-center py-20 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
-      <h1 className="text-5xl font-bold mb-4">Put Kubernetes on Autopilot</h1>
-      <p className="text-xl mb-8">
-        Optimize resources, reduce costs, and scale effortlessly.
-      </p>
-      <a
-        href="#signup"
-        className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:bg-gray-100"
-      >
-        Get Early Access
-      </a>
+    <section className="hero">
+      <div className="container hero-content">
+        <h1>Scale Kubernetes Smarter</h1>
+        <p>Deploy once. Optimize forever. Save costs without the guesswork.</p>
+        <a href="#signup" className="btn hero-btn">
+          Start Free Trial
+        </a>
+      </div>
     </section>
   );
 }
+
+export default Hero;
