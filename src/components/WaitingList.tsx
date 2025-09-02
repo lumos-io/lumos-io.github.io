@@ -25,7 +25,7 @@ function WaitingList() {
           </CardHeader>
           <CardContent>
             <form
-              action="https://formspree.io/f/your_form_id"
+              action="https://formspree.io/f/mzzaajnd"
               method="POST"
               className="grid gap-6"
               onSubmit={() => setStatus("Sending...")}
