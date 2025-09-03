@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Pricing from "./components/Pricing";
 import WaitingList from "./components/WaitingList";
 import "./App.css";
+import FAQ from "./components/FAQ";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Benefits />
         <Pricing />
         <WaitingList />
+        <FAQ />
         <Footer />
       </main>
     </div>
