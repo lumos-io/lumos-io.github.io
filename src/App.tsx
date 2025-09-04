@@ -4,8 +4,9 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Pricing from "./components/Pricing";
 import WaitingList from "./components/WaitingList";
-import "./App.css";
 import FAQ from "./components/FAQ";
+import PricingExplanation from "./components/PricingExplanation";
+import "./App.css";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Hero />
         <Benefits />
         <Pricing />
+        <PricingExplanation />
         <WaitingList />
         <FAQ />
         <Footer />
