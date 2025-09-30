@@ -106,19 +106,15 @@ export default function Pricing() {
 
         {/* Plan Cards */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {plans.map((plan, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 * idx }}
+              viewport={{ once: true, amount: 0.3, margin: "200px 0px 0px 0px" }}
+              transition={{ duration: 0.4, delay: 0.08 * idx, ease: "easeOut" }}
               className={`relative p-8 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:transform hover:scale-105 flex flex-col ${
                 plan.popular
                   ? "bg-gradient-to-b from-indigo-900/50 to-slate-800/50 border-2 border-indigo-500"

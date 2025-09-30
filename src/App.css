@@ -131,3 +131,14 @@ section {
 ::-webkit-scrollbar-thumb:hover {
   background: #475569;
 }
+
+/* Prevent flickering on initial load */
+section > * {
+  opacity: 1;
+  transform: none;
+}
+
+/* Ensure framer-motion doesn't cause flash */
+[data-framer-appear-id] {
+  opacity: 1 !important;
+}

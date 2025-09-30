@@ -91,9 +91,16 @@ function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-white p-2"
+            className="md:hidden p-2 rounded-lg border transition-colors"
+            style={{
+              backgroundColor: '#1e293b',
+              borderColor: '#334155',
+              color: '#ffffff'
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#334155'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1e293b'}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-6 h-6" style={{ color: '#ffffff' }} /> : <Menu className="w-6 h-6" style={{ color: '#ffffff' }} />}
           </button>
         </div>
       </motion.nav>
