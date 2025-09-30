@@ -1,28 +1,91 @@
 /* App.css */
 
-body {
-  /* width: 100%; */
-  /* margin: 0; */
-  font-family: system-ui, sans-serif;
-  background-color: #f9fafb;
-  color: #111827;
+* {
+  scroll-behavior: smooth;
 }
 
-/* main {
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #020617;
+  color: #f8fafc;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Force button colors to override any theme conflicts */
+[data-slot="button"].bg-indigo-600,
+button.bg-indigo-600 {
+  background-color: #4f46e5 !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+[data-slot="button"].bg-indigo-600:hover,
+button.bg-indigo-600:hover {
+  background-color: #4338ca !important;
+  color: #ffffff !important;
+}
+
+[data-slot="button"].bg-slate-700,
+button.bg-slate-700 {
+  background-color: #334155 !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+[data-slot="button"].bg-slate-700:hover,
+button.bg-slate-700:hover {
+  background-color: #475569 !important;
+  color: #ffffff !important;
+}
+
+/* Ensure button text/links are white */
+button a,
+[data-slot="button"] a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* FAQ Accordion buttons - force transparent background */
+#faq button {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#faq button:hover {
+  background-color: transparent !important;
+}
+
+#faq button:focus,
+#faq button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Ensure FAQ text is visible */
+#faq button span {
+  color: #ffffff !important;
+}
+
+main {
   width: 100%;
-} */
+  position: relative;
+}
 
 /* General section layout */
 section {
-  /* width: 100%; */
-  /* max-width: 1100px; constrain content width */
-  /* margin: 0 auto; center horizontally */
-  padding: 4rem 1rem; /*breathing room*/
+  padding: 4rem 1rem;
+  position: relative;
 }
 
-/* Hero section (special) */
+/* Hero section */
 #hero {
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,8 +93,8 @@ section {
   text-align: center;
 }
 
-/* Benefits / Pricing / Signup can still have left text inside centered container */
-#benefits,
+/* Other sections */
+#features,
 #pricing,
 #signup {
   text-align: left;
@@ -40,8 +103,31 @@ section {
 /* Footer */
 footer {
   margin-top: auto;
-  padding: 2rem 1rem;
-  background-color: #fff;
-  border-top: 1px solid #e5e7eb;
+  padding: 3rem 1rem;
+  background-color: #0f172a;
+  border-top: 1px solid #1e293b;
   text-align: center;
+}
+
+/* Smooth transitions */
+section {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
 }

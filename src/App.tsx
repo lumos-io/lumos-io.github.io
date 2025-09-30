@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Benefits from "./components/Benefits";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
@@ -9,8 +10,28 @@ import PricingExplanation from "./components/PricingExplanation";
 import "./App.css";
 
 function App() {
+  useEffect(() => {
+    // Smooth scroll for anchor links
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLAnchorElement;
+      if (target.tagName === "A" && target.hash) {
+        const href = target.getAttribute("href");
+        if (href?.startsWith("#")) {
+          e.preventDefault();
+          const element = document.querySelector(href);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
+      }
+    };
+
+    document.addEventListener("click", handleAnchorClick);
+    return () => document.removeEventListener("click", handleAnchorClick);
+  }, []);
+
   return (
-    <div className="w-full">
+    <div className="w-full min-h-screen bg-slate-950">
       <Navbar />
       <main>
         <Hero />
@@ -19,8 +40,8 @@ function App() {
         <PricingExplanation />
         <WaitingList />
         <FAQ />
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 }

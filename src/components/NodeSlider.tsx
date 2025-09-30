@@ -1,80 +1,115 @@
 "use client";
 
-import { useState } from "react";
-import { Slider } from "@/components/ui/slider";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Check, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function NodeSlider() {
-  const [nodes, setNodes] = useState(0);
-
-  const getPrice = (n: number) => {
-    if (n <= 10) return 0;
-    if (n >= 1001) return "Custom";
-    return n * 25;
-  };
-
-  const nodeText =
-    nodes >= 1001
-      ? "1000+ nodes included"
-      : nodes <= 10
-      ? "Free for up to 10 nodes"
-      : `${nodes} node${nodes > 1 ? "s" : ""} included`;
+  const features = [
+    "eBPF agent for multidimensional pod autoscaling",
+    "Advanced UI with analytics dashboard",
+    "Real-time cluster health monitoring",
+    "SLO-based scaling policies",
+    "Cross-cloud node optimization",
+    "24/7 autonomous operations"
+  ];
 
   return (
-    <section className="max-w-4xl mx-auto px-6 py-16">
-      {/* Pricing Card */}
-      <div className="p-8 bg-white rounded-2xl shadow-lg text-center mb-8">
-        <h3 className="text-2xl font-bold mb-2">Custom Node Pricing</h3>
-        <p className="text-gray-500 mb-4">
-          Adjust the slider or input below to see your cost
-        </p>
+    <div className="max-w-5xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="relative"
+      >
+        {/* Glow effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-3xl blur-xl" />
 
-        <p className="text-gray-500 mb-2">Your Nodes</p>
-        <p className="text-4xl font-bold mb-4">
-          {getPrice(nodes) === "Custom" ? "Custom" : `$${getPrice(nodes)}`}
-          {getPrice(nodes) !== "Custom" && (
-            <span className="text-base font-medium">/mo</span>
-          )}
-        </p>
+        {/* Main card */}
+        <div className="relative p-10 bg-gradient-to-br from-slate-800/80 to-slate-900/80 border-2 border-indigo-500/30 rounded-3xl backdrop-blur-xl">
+          <div className="grid md:grid-cols-2 gap-10">
+            {/* Left side - Pricing */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-sm font-medium mb-6">
+                <Sparkles className="w-4 h-4" />
+                Simple Per-Node Pricing
+              </div>
 
-        <ul className="text-gray-600 mb-4 space-y-1">
-          <li>{nodeText}</li>
-          {nodes >= 11 && nodes <= 1000 && <li>$25 per node beyond 10</li>}
-          {nodes >= 1001 && (
-            <li>Contact sales for custom enterprise pricing</li>
-          )}
-        </ul>
+              <h3 className="text-3xl font-bold text-white mb-4">
+                Pay Only for What You Use
+              </h3>
 
-        <Button variant="secondary">Contact Sales</Button>
-      </div>
+              <div className="space-y-6 mb-6">
+                {/* Free tier */}
+                <div className="p-5 bg-slate-950/50 rounded-xl border border-emerald-500/30">
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <span className="text-4xl font-bold text-emerald-400">Free</span>
+                    <span className="text-slate-400">up to 10 nodes</span>
+                  </div>
+                  <p className="text-slate-300 text-sm">
+                    Perfect for development and small production workloads
+                  </p>
+                </div>
 
-      {/* Slider + Input */}
-      <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-        <Slider
-          value={[nodes]}
-          min={0}
-          max={1001}
-          step={1}
-          onValueChange={(val) => setNodes(val[0])}
-          className="flex-1"
-        />
+                {/* Paid tier */}
+                <div className="p-5 bg-slate-950/50 rounded-xl border border-indigo-500/30">
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <span className="text-4xl font-bold text-indigo-400">$25</span>
+                    <span className="text-slate-400">per node/month</span>
+                  </div>
+                  <p className="text-slate-300 text-sm mb-3">
+                    After 10 nodes, scale linearly as you grow
+                  </p>
+                  <div className="text-xs text-slate-400 font-mono bg-slate-900/50 p-3 rounded-lg">
+                    Example: 11 nodes = 11 × $25 = <span className="text-white font-bold">$275/mo</span>
+                  </div>
+                </div>
 
-        <Input
-          type="number"
-          min={0}
-          max={1001}
-          value={nodes}
-          onChange={(e) => {
-            let val = parseInt(e.target.value, 10);
-            if (isNaN(val)) val = 0;
-            if (val > 1001) val = 1001;
-            if (val < 0) val = 0;
-            setNodes(val);
-          }}
-          className="w-24 text-center"
-        />
-      </div>
-    </section>
+                {/* Enterprise */}
+                <div className="p-5 bg-slate-950/50 rounded-xl border border-purple-500/30">
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <span className="text-4xl font-bold text-purple-400">Custom</span>
+                    <span className="text-slate-400">1000+ nodes</span>
+                  </div>
+                  <p className="text-slate-300 text-sm">
+                    Enterprise pricing with volume discounts
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right side - Features */}
+            <div className="flex flex-col justify-center">
+              <h4 className="text-xl font-bold text-white mb-6">
+                Everything included in node pricing:
+              </h4>
+              <div className="space-y-4">
+                {features.map((feature, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: idx * 0.1 }}
+                    className="flex items-start gap-3"
+                  >
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-500/20 border border-indigo-500/50 flex items-center justify-center mt-0.5">
+                      <Check className="w-4 h-4 text-indigo-400" />
+                    </div>
+                    <span className="text-slate-200 leading-relaxed">{feature}</span>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="mt-8 p-4 bg-indigo-500/10 border border-indigo-500/20 rounded-lg">
+                <p className="text-sm text-indigo-200">
+                  <span className="font-semibold">No hidden fees.</span> All features included. Cancel anytime.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
   );
 }
