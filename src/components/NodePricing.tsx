@@ -3,14 +3,14 @@
 import { Check, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function NodeSlider() {
+export default function NodePricing() {
   const features = [
     "eBPF agent for multidimensional pod autoscaling",
     "Advanced UI with analytics dashboard",
     "Real-time cluster health monitoring",
     "SLO-based scaling policies",
     "Cross-cloud node optimization",
-    "24/7 autonomous operations"
+    "24/7 autonomous operations",
   ];
 
   return (
@@ -43,7 +43,9 @@ export default function NodeSlider() {
                 {/* Free tier */}
                 <div className="p-5 bg-slate-950/50 rounded-xl border border-emerald-500/30">
                   <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-4xl font-bold text-emerald-400">Free</span>
+                    <span className="text-4xl font-bold text-emerald-400">
+                      Free
+                    </span>
                     <span className="text-slate-400">up to 10 nodes</span>
                   </div>
                   <p className="text-slate-300 text-sm">
@@ -54,21 +56,26 @@ export default function NodeSlider() {
                 {/* Paid tier */}
                 <div className="p-5 bg-slate-950/50 rounded-xl border border-indigo-500/30">
                   <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-4xl font-bold text-indigo-400">$25</span>
+                    <span className="text-4xl font-bold text-indigo-400">
+                      $25
+                    </span>
                     <span className="text-slate-400">per node/month</span>
                   </div>
                   <p className="text-slate-300 text-sm mb-3">
                     After 10 nodes, scale linearly as you grow
                   </p>
                   <div className="text-xs text-slate-400 font-mono bg-slate-900/50 p-3 rounded-lg">
-                    Example: 11 nodes = 11 × $25 = <span className="text-white font-bold">$275/mo</span>
+                    Example: 11 nodes = 11 × $25 ={" "}
+                    <span className="text-white font-bold">$275/mo</span>
                   </div>
                 </div>
 
                 {/* Enterprise */}
                 <div className="p-5 bg-slate-950/50 rounded-xl border border-purple-500/30">
                   <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-4xl font-bold text-purple-400">Custom</span>
+                    <span className="text-4xl font-bold text-purple-400">
+                      Custom
+                    </span>
                     <span className="text-slate-400">1000+ nodes</span>
                   </div>
                   <p className="text-slate-300 text-sm">
@@ -96,14 +103,17 @@ export default function NodeSlider() {
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-500/20 border border-indigo-500/50 flex items-center justify-center mt-0.5">
                       <Check className="w-4 h-4 text-indigo-400" />
                     </div>
-                    <span className="text-slate-200 leading-relaxed">{feature}</span>
+                    <span className="text-slate-200 leading-relaxed">
+                      {feature}
+                    </span>
                   </motion.div>
                 ))}
               </div>
 
               <div className="mt-8 p-4 bg-indigo-500/10 border border-indigo-500/20 rounded-lg">
                 <p className="text-sm text-indigo-200">
-                  <span className="font-semibold">No hidden fees.</span> All features included. Cancel anytime.
+                  <span className="font-semibold">No hidden fees.</span> All
+                  features included. Cancel anytime.
                 </p>
               </div>
             </div>

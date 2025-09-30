@@ -2,17 +2,14 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import {
   Activity,
-  Gauge,
   TrendingDown,
   Clock,
   Shield,
-  Zap,
   Cpu,
   Settings,
-  BarChart3,
   Layers,
   LineChart,
-  Eye
+  Eye,
 } from "lucide-react";
 
 const features = [
@@ -20,45 +17,45 @@ const features = [
     icon: Layers,
     title: "Full-Stack Autoscaling",
     desc: "Scale pods based on latency, throughput, and cost—plus autonomous cluster node scaling across AWS, GCP, and Azure. Your entire infrastructure adapts in real-time.",
-    gradient: "from-indigo-500 to-purple-500"
+    gradient: "from-indigo-500 to-purple-500",
   },
   {
     icon: LineChart,
     title: "Advanced Analytics Dashboard",
     desc: "Real-time SLO tracking, cost breakdowns, and cluster health visualization. Drill down into every metric that matters—from pod latency to node utilization—all in one intuitive UI.",
-    gradient: "from-purple-500 to-pink-500"
+    gradient: "from-purple-500 to-pink-500",
   },
   {
     icon: Activity,
     title: "eBPF-Powered Observability",
     desc: "Extract deep runtime signals directly from your apps. No agents, no sidecars, no code changes. See everything happening at the kernel level.",
-    gradient: "from-pink-500 to-rose-500"
+    gradient: "from-pink-500 to-rose-500",
   },
   {
     icon: TrendingDown,
     title: "Autonomous Cost Optimization",
     desc: "We don't just recommend—our agent makes real changes inside your cluster to cut waste. Continuous right-sizing, spot instance management, and intelligent scheduling.",
-    gradient: "from-rose-500 to-orange-500"
+    gradient: "from-rose-500 to-orange-500",
   },
   {
     icon: Eye,
     title: "Cluster Health Monitoring",
     desc: "Proactive alerts on pod crashes, resource exhaustion, and SLO violations. Visual topology maps show dependencies and bottlenecks before they become incidents.",
-    gradient: "from-orange-500 to-amber-500"
+    gradient: "from-orange-500 to-amber-500",
   },
   {
     icon: Shield,
     title: "Zero Instrumentation",
     desc: "Deploy in minutes. No SDKs, no code changes, no learning curve. Just results. Works with any Kubernetes distribution.",
-    gradient: "from-amber-500 to-yellow-500"
-  }
+    gradient: "from-amber-500 to-yellow-500",
+  },
 ];
 
 const stats = [
   { icon: TrendingDown, value: "40%", label: "Average cost reduction" },
   { icon: Clock, value: "80%", label: "Less on-call escalations" },
   { icon: Cpu, value: "<1%", label: "CPU overhead" },
-  { icon: Settings, value: "5min", label: "Setup time" }
+  { icon: Settings, value: "5min", label: "Setup time" },
 ];
 
 function Benefits() {
@@ -70,9 +67,9 @@ function Benefits() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const itemVariants = {
@@ -80,8 +77,8 @@ function Benefits() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 }
-    }
+      transition: { duration: 0.5 },
+    },
   };
 
   return (
@@ -109,7 +106,8 @@ function Benefits() {
               Beyond Traditional Autoscaling
             </h2>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-              Futura combines eBPF observability with autonomous decision-making to optimize your Kubernetes infrastructure in real-time.
+              Futura combines eBPF observability with autonomous decision-making
+              to optimize your Kubernetes infrastructure in real-time.
             </p>
           </motion.div>
 
@@ -127,7 +125,9 @@ function Benefits() {
               >
                 <div className="h-full p-8 rounded-2xl bg-slate-800/50 border border-slate-700/50 backdrop-blur-sm hover:border-slate-600 transition-all duration-300 hover:transform hover:scale-105">
                   {/* Icon with gradient */}
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} p-3 mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} p-3 mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  >
                     <feature.icon className="w-full h-full text-white" />
                   </div>
 
@@ -169,9 +169,7 @@ function Benefits() {
                 <div className="text-3xl md:text-4xl font-bold text-white mb-2">
                   {stat.value}
                 </div>
-                <div className="text-slate-400 text-sm">
-                  {stat.label}
-                </div>
+                <div className="text-slate-400 text-sm">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>

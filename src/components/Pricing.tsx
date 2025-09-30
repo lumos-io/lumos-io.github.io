@@ -3,7 +3,7 @@
 import { Star, Check } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import NodeSlider from "@/components/NodeSlider";
+import NodePricing from "@/components/NodePricing";
 import { motion } from "framer-motion";
 
 export default function Pricing() {
@@ -16,10 +16,10 @@ export default function Pricing() {
         "Community support",
         "Open-source features",
         "Unlimited agents",
-        "Basic autoscaling"
+        "Basic autoscaling",
       ],
       cta: "Get Started",
-      popular: false
+      popular: false,
     },
     {
       name: "Starter",
@@ -30,10 +30,10 @@ export default function Pricing() {
         "Email support",
         "Basic insights",
         "Cost optimization",
-        "24h response time"
+        "24h response time",
       ],
       cta: "Start Trial",
-      popular: false
+      popular: false,
     },
     {
       name: "Pro",
@@ -45,10 +45,10 @@ export default function Pricing() {
         "Advanced recommendations",
         "Custom SLO policies",
         "Slack integration",
-        "4h response time"
+        "4h response time",
       ],
       cta: "Start Trial",
-      popular: true
+      popular: true,
     },
     {
       name: "Enterprise",
@@ -60,15 +60,18 @@ export default function Pricing() {
         "Custom integrations",
         "SLA guarantees",
         "On-premise option",
-        "24/7 support"
+        "24/7 support",
       ],
       cta: "Contact Sales",
-      popular: false
-    }
+      popular: false,
+    },
   ];
 
   return (
-    <section id="pricing" className="px-6 py-32 bg-slate-950 relative overflow-hidden">
+    <section
+      id="pricing"
+      className="px-6 py-32 bg-slate-950 relative overflow-hidden"
+    >
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f08_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f08_1px,transparent_1px)] bg-[size:64px_64px]" />
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -98,7 +101,7 @@ export default function Pricing() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-16"
         >
-          <NodeSlider />
+          <NodePricing />
         </motion.div>
 
         {/* Plan Cards */}
@@ -132,18 +135,27 @@ export default function Pricing() {
               )}
 
               <div className="text-center mb-6">
-                <h3 className="text-xl font-semibold text-white mb-4">{plan.name}</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">
+                  {plan.name}
+                </h3>
                 <div className="mb-2">
-                  <span className="text-4xl font-bold text-white">{plan.price}</span>
+                  <span className="text-4xl font-bold text-white">
+                    {plan.price}
+                  </span>
                   {plan.period && (
-                    <span className="text-slate-400 text-lg">{plan.period}</span>
+                    <span className="text-slate-400 text-lg">
+                      {plan.period}
+                    </span>
                   )}
                 </div>
               </div>
 
               <ul className="space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature, fIdx) => (
-                  <li key={fIdx} className="flex items-start gap-2 text-slate-300">
+                  <li
+                    key={fIdx}
+                    className="flex items-start gap-2 text-slate-300"
+                  >
                     <Check className="w-5 h-5 text-indigo-400 flex-shrink-0 mt-0.5" />
                     <span className="text-sm">{feature}</span>
                   </li>
