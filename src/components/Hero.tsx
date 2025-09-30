@@ -54,8 +54,7 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-slate-300 leading-relaxed"
         >
-          The first Kubernetes autopilot that scales your apps based on real SLOs—not just CPU.
-          Go beyond recommendations with autonomous agents that optimize, upgrade, and remediate.
+          Autonomous Kubernetes optimization from pods to nodes. Scale on real SLOs, cut costs automatically, and see everything in real-time—with zero code changes.
         </motion.p>
 
         <motion.div
