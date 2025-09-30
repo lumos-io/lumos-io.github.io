@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function NodePricing() {
   const features = [
-    "eBPF agent for multidimensional pod autoscaling",
+    "eBPF daemon for multidimensional pod autoscaling",
     "Advanced UI with analytics dashboard",
     "Real-time cluster health monitoring",
     "SLO-based scaling policies",

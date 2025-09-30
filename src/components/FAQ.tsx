@@ -21,9 +21,60 @@ const faqItems: FAQItem[] = [
           rates, and cost.
         </p>
         <p>
-          Our eBPF agent extracts deep runtime signals from your applications
-          without any instrumentation, then our autonomous agent makes real-time
-          scaling decisions to meet your targets.
+          Our eBPF daemon extracts deep runtime signals from your applications
+          without any instrumentation. Then, <strong>advanced ML algorithms continuously learn your application's behavior patterns</strong>—traffic cycles, load spikes, resource usage trends—to predict when to scale up or down.
+        </p>
+        <p>
+          This means proactive scaling that happens before performance degrades, not reactive scaling that happens after. The system gets smarter over time, optimizing for your specific workload patterns.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "What is eBPF and why does it matter?",
+    answer: (
+      <div className="space-y-3">
+        <p>
+          <strong>eBPF (extended Berkeley Packet Filter)</strong> is a revolutionary Linux kernel technology that lets us observe your applications at the deepest level—without modifying them.
+        </p>
+        <p>
+          Think of it as a microscope for your infrastructure. eBPF allows Futura to see network traffic, system calls, CPU usage, and application behavior in real-time, all from the kernel level.
+        </p>
+        <p>
+          This means zero code changes, no sidecars, no performance overhead—just deep visibility into exactly what's happening in your cluster.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "Do I have full control or does it run autonomously?",
+    answer: (
+      <div className="space-y-3">
+        <p>
+          <strong>You decide.</strong> Futura offers two modes:
+        </p>
+        <ul className="ml-5 list-disc space-y-2 text-slate-300">
+          <li><strong>Recommendation mode:</strong> The daemon analyzes your workloads and provides optimization recommendations. You review and approve changes (human-in-the-loop).</li>
+          <li><strong>Autonomous mode:</strong> The daemon automatically applies optimizations within your defined guardrails and SLO boundaries.</li>
+        </ul>
+        <p>
+          Most teams start with recommendation mode to build trust, then gradually enable autonomous mode for specific workloads. You stay in control.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "How does Futura reduce costs over time?",
+    answer: (
+      <div className="space-y-3">
+        <p>
+          Futura continuously optimizes your infrastructure, which means <strong>your node costs decrease as efficiency improves</strong>.
+        </p>
+        <p>
+          As the daemon learns your workload patterns, it right-sizes pods, eliminates over-provisioning, and optimizes node utilization. This means you need fewer nodes to run the same workloads.
+        </p>
+        <p>
+          Example: If you start with 50 nodes at $25/node ($1,250/month), optimization might reduce that to 35 nodes after a few weeks ($875/month)—a 30% cost reduction while maintaining the same performance.
         </p>
       </div>
     ),
@@ -44,11 +95,11 @@ const faqItems: FAQItem[] = [
       <div className="space-y-3">
         <p>
           <strong>No.</strong> Zero instrumentation needed. Our eBPF-powered
-          agent runs at the kernel level and automatically extracts metrics from
+          daemon runs at the kernel level and automatically extracts metrics from
           your applications.
         </p>
         <p>
-          No SDKs, no code changes, no sidecars. Just deploy the agent and
+          No SDKs, no code changes, no sidecars. Just deploy the daemon and
           you're ready to go.
         </p>
       </div>
@@ -64,8 +115,8 @@ const faqItems: FAQItem[] = [
         </p>
         <p>
           We analyze latency, throughput, cost, and custom SLOs in real-time.
-          Our agent doesn't just recommend—it autonomously makes changes to
-          optimize your cluster.
+          Our daemon doesn't just recommend—it can autonomously make changes to
+          optimize your cluster (with your permission).
         </p>
       </div>
     ),
@@ -84,7 +135,7 @@ const faqItems: FAQItem[] = [
     question: "What's coming next in Futura's roadmap?",
     answer: (
       <div className="space-y-3">
-        <p>We're building a suite of cooperative agents that handle:</p>
+        <p>We're building a suite of cooperative daemons that handle:</p>
         <ul className="ml-5 list-disc space-y-2 text-slate-300">
           <li>
             <strong>Automated upgrades</strong> - Zero-downtime Kubernetes and

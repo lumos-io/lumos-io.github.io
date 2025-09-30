@@ -33,8 +33,8 @@ const features = [
   },
   {
     icon: TrendingDown,
-    title: "Autonomous Cost Optimization",
-    desc: "We don't just recommend—our agent makes real changes inside your cluster to cut waste. Continuous right-sizing, spot instance management, and intelligent scheduling.",
+    title: "Smart Cost Optimization",
+    desc: "Choose recommendation mode (you approve changes) or autonomous mode with guardrails. Our daemon right-sizes workloads, manages spot instances, and optimizes scheduling—you stay in control.",
     gradient: "from-rose-500 to-orange-500",
   },
   {
